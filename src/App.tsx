@@ -6,6 +6,7 @@ import { QUERY_PARAM_FLIGHT } from "./components/flight-list/flights.constants";
 export function Home() {
   const [searchParams] = useSearchParams();
   const selectFlight = searchParams.get(QUERY_PARAM_FLIGHT);
+
   return (
     <div>
       <FlightList />

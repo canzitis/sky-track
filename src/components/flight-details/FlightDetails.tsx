@@ -22,7 +22,7 @@ export default function FlightDetails() {
   if (!flight) return null;
 
   return (
-    <aside className="absolute right-0 top-0 mr-7 bg-neutral-900 w-120 rounded-xl">
+    <aside className="absolute right-0 top-7 mr-7 bg-card-foreground w-120 rounded-xl">
       <div
         className="h-70 rounded-t-xl p-5"
         style={{

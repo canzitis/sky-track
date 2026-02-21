@@ -18,11 +18,13 @@ export default function FlightCart({ flight }: Props) {
         "rounded-md p-0.5 transition duration-600 ease-in-out",
         isActive
           ? "bg-gradient-to-r from-rose-500 to-orange-400"
-          : "bg-transparent"
+          : "bg-transparent",
       )}
     >
       <button
-        className={cn("bg-neutral-900 rounded-md p-4 block w-full h-full")}
+        className={cn(
+          "bg-card-foreground rounded-md p-4 block w-full h-full transition-colors duration-300 hover:bg-accent",
+        )}
         onClick={() => {
           setSearchParams({ [QUERY_PARAM_FLIGHT]: flight.id });
         }}
@@ -40,7 +42,7 @@ export default function FlightCart({ flight }: Props) {
           </div>
 
           <div>
-            <span className="bg-neutral-800 py-1 px-2 rounded-xl">
+            <span className="bg-popover-foreground py-1 px-2 rounded-xl">
               {flight.aircraftReg}
             </span>
           </div>
