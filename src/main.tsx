@@ -1,22 +1,28 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
 
-import "./index.css";
-import { Home } from "./App.tsx";
-import Layout from "./components/Layout.tsx";
-import { ThemeProvider } from "./components/providers/theme/ThemeProvider.tsx";
+import { Home } from './App.tsx'
+import Layout from './components/Layout.tsx'
+import { ThemeProvider } from './components/providers/theme/ThemeProvider.tsx'
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ThemeProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
-  </StrictMode>,
-);
+import './index.css'
+
+createRoot(document.getElementById('root')!).render(
+	<StrictMode>
+		<ThemeProvider>
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<Navigate to='/home' replace />} />
+					<Route element={<Layout />}>
+						<Route path='/home' element={<Home />} />
+						<Route path='/flights' element={<div>flights</div>} />
+						<Route path='/about' element={<div>about</div>} />
+						<Route path='/contacts' element={<div>contacts</div>} />
+						<Route path='/like' element={<div>like</div>} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
+		</ThemeProvider>
+	</StrictMode>
+)

@@ -2,7 +2,7 @@ import type { IFlight } from "@/types/flight.types";
 
 export function FlightInformation({ flight }: { flight: IFlight }) {
   return (
-    <div className="my-3.5">
+    <div className="my-3.5 text-sm">
       <div className="font-medium mb-1 bg-ring px-mini-element py-mini-element rounded-tl-xl rounded-tr-xl p-2 ">
         {/* <div className="font-medium mb-1 bg-neutral-700 px-mini-element py-mini-element rounded-tl-xl roun ded-tr-xl p-2"> */}
         Flight information
@@ -29,7 +29,7 @@ export function FlightInformation({ flight }: { flight: IFlight }) {
           <p className="text-muted-foreground">Speed</p>
           <p>870 km/h</p>
         </div>
-        <div className="bg-card px-mini-element py-mini-element flex items-center justify-between rounded-br-xl px-3 py-2 gap-5">
+        <div className="bg-card px-mini-element py-mini-element flex items-center justify-between rounded-br-xl px-3 py-2 gap-3">
           <p className="text-muted-foreground">Altitude</p>
           <p>11 300m</p>
         </div>

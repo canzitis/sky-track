@@ -1,22 +1,33 @@
-import { Sun } from "./animate-ui/icons/sun";
-import { Moon } from "./animate-ui/icons/moon";
-import { useTheme } from "./providers/theme/useTheme";
+import { Tooltip } from 'antd'
+import { Link } from 'react-router-dom'
+
+import { Heart } from './animate-ui/icons/heart'
+import { Moon } from './animate-ui/icons/moon'
+import { Sun } from './animate-ui/icons/sun'
+import { useTheme } from './providers/theme/useTheme'
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+	const { theme, toggleTheme } = useTheme()
 
-  return (
-    <div className="fixed top-7 left-1/2 -translate-x-1/2 w-8 h-8">
-      <button
-        onClick={toggleTheme}
-        className="w-full h-full rounded-full bg-foreground flex items-center justify-center shadow-lg"
-      >
-        {theme === "dark" ? (
-          <Sun animateOnHover className="w-5 h-5" color={"black"} />
-        ) : (
-          <Moon animateOnHover className="w-5 h-5" color={"white"} />
-        )}
-      </button>
-    </div>
-  );
+	return (
+		<div className='absolute top-3 right-0 -translate-x-1/2'>
+			<div className='flex gap-3'>
+				<Tooltip placement='bottom' title='Favorites'>
+					<Link to='/like'>
+						<Heart animateOnHover className='h-4 w-4' />
+					</Link>
+				</Tooltip>
+
+				<Tooltip placement='bottom' title='Change theme'>
+					<button onClick={toggleTheme} className='h-full w-full'>
+						{theme === 'dark' ? (
+							<Sun animateOnHover className='h-4 w-4' color={'white'} />
+						) : (
+							<Moon animateOnHover className='h-4 w-4' color={'black'} />
+						)}
+					</button>
+				</Tooltip>
+			</div>
+		</div>
+	)
 }
