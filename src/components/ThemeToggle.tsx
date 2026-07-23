@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom'
 import { Heart } from './animate-ui/icons/heart'
 import { Moon } from './animate-ui/icons/moon'
 import { Sun } from './animate-ui/icons/sun'
+import FiltersButton from './providers/filters/FiltersButton'
 import { useTheme } from './providers/theme/useTheme'
 
 export function ThemeToggle() {
 	const { theme, toggleTheme } = useTheme()
 
 	return (
-		<div className='absolute top-3 right-0 -translate-x-1/2'>
+		<div className='absolute top-3 right-0 -translate-x-1/5'>
 			<div className='flex gap-3'>
+				<FiltersButton />
 				<Tooltip placement='bottom' title='Favorites'>
 					<Link to='/like'>
 						<Heart animateOnHover className='h-4 w-4' />
